@@ -1,6 +1,7 @@
-import { reducer as formReducer } from "redux-form";
-import { combineReducers } from "redux";
+import { all } from "redux-saga/effects";
 
-export const rootReducer = combineReducers({
-  form: formReducer
-});
+let watch = [];
+
+export default function* rootSaga() {
+  yield all(watch);
+}
