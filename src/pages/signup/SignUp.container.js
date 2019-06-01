@@ -5,8 +5,8 @@ import SignUp from "./SignUp";
 
 import signup from "../../action-creator/signup.js";
 
-const mapStateToProps = ({ signup: { form } }) => {
-  return { form };
+const mapStateToProps = ({ dataForm }) => {
+  return { dataForm };
 };
 
 export default connect(

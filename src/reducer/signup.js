@@ -1,13 +1,14 @@
 import signup from "../action-type/signup";
 
 const initialState = {
-  form: null
+  phone: null,
+  password: null
 };
 
-export function signupReduser(state = initialState, action) {
+export default function signupReduser(state = initialState, action) {
   switch (action.type) {
     case signup.GET_DATA_FORM:
-      return { ...state, form: action.payload };
+      return { ...state, ...action.payload };
     default:
       return state;
   }

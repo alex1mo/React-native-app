@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { styles } from "./SignUp.style";
 
-const SignUp = ({ getDataForm, ...props }) => {
+const SignUp = ({ getDataForm, dataForm }) => {
   let form = {
     phone: null,
     password1: null,
@@ -33,7 +33,7 @@ const SignUp = ({ getDataForm, ...props }) => {
         style={styles.button}
         onPress={() => {
           let { phone, password1, password2 } = form;
-          if ((password1 === password2) & phone) {
+          if (password1 === password2 && phone) {
             getDataForm({ phone, password: password1 });
           }
         }}
