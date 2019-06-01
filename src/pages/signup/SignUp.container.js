@@ -1,6 +1,7 @@
 import React from "react";
-import SignUp from "./SignUp";
 import { connect } from "react-redux";
+
+import SignUp from "./SignUp";
 
 import signup from "../../action-creator/signup.js";
 
