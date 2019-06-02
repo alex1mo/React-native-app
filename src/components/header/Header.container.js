@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Header from "./Header";
-import header from "../../action-creator/header";
+
+import header from "../../action-creator/header.js";
 
 const mapStateToProps = ({ page }) => ({
   page

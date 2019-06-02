@@ -3,6 +3,6 @@ import { connect } from "react-redux";
 
 import Main from "./Main";
 
-const mapStateToProps = () => {};
+const mapStateToProps = ({ page }) => ({ page });
 
-export default connect()(Main);
+export default connect(mapStateToProps)(Main);

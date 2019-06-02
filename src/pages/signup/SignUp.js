@@ -18,16 +18,21 @@ const SignUp = ({ getDataForm, dataForm }) => {
         style={styles.input}
         placeholder="phone"
         onChangeText={text => (form.phone = text)}
+        textContentType="telephoneNumber"
       />
       <TextInput
         style={styles.input}
         placeholder="password"
         onChangeText={text => (form.password1 = text)}
+        textContentType="password"
+        secureTextEntry={true}
       />
       <TextInput
         style={styles.input}
         placeholder="confirm password"
         onChangeText={text => (form.password2 = text)}
+        textContentType="password"
+        secureTextEntry={true}
       />
       <TouchableOpacity
         style={styles.button}
