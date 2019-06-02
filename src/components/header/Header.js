@@ -26,7 +26,7 @@ class Header extends React.Component {
         <TouchableOpacity onPress={() => setPage(Profile)}>
           <Image
             style={styles.avatar}
-            source={require("../../../assets/defaultAvatar.png")}
+            source={require("../../../assets/defaultAvatarMin.png")}
           />
         </TouchableOpacity>
         {this.switchAdd(page) || (

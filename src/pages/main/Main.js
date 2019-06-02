@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import Header from "../../components/header/Header.container";
 import Add from "../../components/add/Add";
+import Profile from "../../components/profile/Profile";
 
 import { styles } from "./Main.style";
 

@@ -14,7 +14,7 @@ class Add extends React.Component {
           multiline={true}
           numberOfLines={5}
           style={[styles.border, styles.input]}
-          maxLength={200}
+          maxLength={100}
         />
         <View style={styles.buttonWrap}>
           <TouchableOpacity style={styles.button}>

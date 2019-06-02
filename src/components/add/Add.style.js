@@ -34,10 +34,14 @@ export const styles = StyleSheet.create({
   },
 
   input: {
-    padding: 5
+    padding: 5,
+    fontSize: rem
   },
 
-  buttonText: { color: "#fff" },
+  buttonText: {
+    color: "#fff",
+    fontSize: rem
+  },
 
   border: {
     borderWidth: 2,
