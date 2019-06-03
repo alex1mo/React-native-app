@@ -1,10 +1,13 @@
 import React from "react";
 import { View, TextInput, Text, TouchableOpacity } from "react-native";
+
 import PropTypes from "prop-types";
 
 import { styles } from "./SignUp.style";
 
-const SignUp = ({ setFormData }) => {
+import utils from "../../utils/utils.all";
+
+const SignUp = ({ setFormData, navigation }) => {
   let form = {
     phone: null,
     password1: null,
@@ -40,6 +43,11 @@ const SignUp = ({ setFormData }) => {
           let { phone, password1, password2 } = form;
           if (password1 === password2 && phone) {
             setFormData({ phone, password: password1 });
+            utils.storeData(
+              "auth",
+              JSON.stringify({ phone, password: password1 })
+            );
+            navigation.navigate("main");
           }
         }}
       >
@@ -50,7 +58,8 @@ const SignUp = ({ setFormData }) => {
 };
 
 SignUp.propTypes = {
-  setFormData: PropTypes.func.isRequired
+  setFormData: PropTypes.func.isRequired,
+  navigation: PropTypes.object
 };
 
 export default SignUp;
