@@ -28,7 +28,6 @@ export const styles = StyleSheet.create({
     backgroundColor: "#47aef0",
     width: width * 0.3,
     height: height * 0.05,
-    color: "white",
     borderRadius: 5,
     ...flexCenter
   },

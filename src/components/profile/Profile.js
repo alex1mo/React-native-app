@@ -66,6 +66,9 @@ const Profile = () => {
           })}
         </View>
       </View>
+      <TouchableOpacity style={styles.edit}>
+        <Text style={styles.editText}>edit</Text>
+      </TouchableOpacity>
     </View>
   );
 };

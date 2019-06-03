@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { styles } from "./SignUp.style";
 
-const SignUp = ({ getDataForm, dataForm }) => {
+const SignUp = ({ getFormData, dataForm }) => {
   let form = {
     phone: null,
     password1: null,
@@ -39,7 +39,7 @@ const SignUp = ({ getDataForm, dataForm }) => {
         onPress={() => {
           let { phone, password1, password2 } = form;
           if (password1 === password2 && phone) {
-            getDataForm({ phone, password: password1 });
+            getFormData({ phone, password: password1 });
           }
         }}
       >
@@ -54,7 +54,7 @@ SignUp.propTypes = {
     phone: PropTypes.string,
     password: PropTypes.string
   }),
-  getDataForm: PropTypes.func.isRequired
+  getFormData: PropTypes.func.isRequired
 };
 
 export default SignUp;

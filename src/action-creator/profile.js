@@ -1,4 +1,4 @@
-import signup from "../action-type/signup";
+import profile from "../action-type/profile";
 
 const getFormData = data => {
   return {

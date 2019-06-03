@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Image, Text, TouchableOpacity } from "react-native";
+import PropTypes from "prop-types";
 
 import Add from "../add/Add";
 import Profile from "../profile/Profile";
@@ -38,5 +39,10 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  page: PropTypes.func,
+  setPage: PropTypes.func.isRequired
+};
 
 export default Header;

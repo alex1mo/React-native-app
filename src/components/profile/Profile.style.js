@@ -1,11 +1,13 @@
 import { StyleSheet } from "react-native";
 import { rootStyles } from "../../../App.style";
+import { styles as AddStyle } from "../add/Add.style";
 
 let { width, height, rem } = rootStyles;
 
 const flexCenter = {
   display: "flex",
-  alignItems: "center"
+  alignItems: "center",
+  justifyContent: "center"
 };
 
 export const styles = StyleSheet.create({
@@ -13,7 +15,8 @@ export const styles = StyleSheet.create({
     width: width,
     height: height - height * 0.1,
     borderColor: "white",
-    ...flexCenter
+    ...flexCenter,
+    justifyContent: "flex-start"
   },
 
   avatar: {
@@ -23,12 +26,22 @@ export const styles = StyleSheet.create({
 
   data: {
     width: width * 0.8,
-    paddingTop: 50,
+    marginTop: rem * 3,
     display: "flex",
     flexDirection: "row"
   },
 
   text: {
-    marginVertical: 5
+    marginVertical: rem * 0.3
+  },
+
+  edit: {
+    marginTop: rem,
+    ...AddStyle.button
+  },
+
+  editText: {
+    color: "#fff",
+    fontSize: rem
   }
 });
