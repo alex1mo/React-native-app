@@ -8,5 +8,5 @@ const mapStateToProps = ({ profileData }) => ({ profileData });
 
 export default connect(
   mapStateToProps,
-  { getFormData: profile.getFormData }
+  { setFormData: profile.setFormData }
 )(Profile);

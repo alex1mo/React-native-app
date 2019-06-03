@@ -20,7 +20,7 @@ class Profile extends React.Component {
 
   render() {
     let { edit, data } = this.state;
-    let { profileData, getFormData } = this.props;
+    let { profileData, setFormData } = this.props;
 
     return (
       <View style={styles.container}>
@@ -56,7 +56,7 @@ class Profile extends React.Component {
             onPress={() => {
               this.setState({ edit: !edit });
               if (edit) {
-                getFormData({ ...data, image: profileData.image });
+                setFormData({ ...data, image: profileData.image });
               }
             }}
           >
@@ -67,7 +67,7 @@ class Profile extends React.Component {
               style={styles.edit}
               onPress={() => {
                 this.setState({ edit: !edit, data: { ...profileData } });
-                getFormData({ ...profileData, image: data.image });
+                setFormData({ ...profileData, image: data.image });
               }}
             >
               <Text style={styles.editText}>reset</Text>
@@ -88,7 +88,7 @@ Profile.propTypes = {
     phone: PropTypes.string,
     email: PropTypes.string
   }),
-  getFormData: PropTypes.func.isRequired
+  setFormData: PropTypes.func.isRequired
 };
 
 export default Profile;

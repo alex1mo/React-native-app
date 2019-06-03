@@ -57,7 +57,7 @@ const takeFromGallery = async context => {
 
   if (!result.cancelled) {
     // context.setState({ data: { ...context.state.data, image: result.uri } });
-    context.props.getFormData({ image: result.uri });
+    context.props.setFormData({ image: result.uri });
   }
 };
 

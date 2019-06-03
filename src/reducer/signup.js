@@ -7,7 +7,7 @@ const initialState = {
 
 export default function signupReduser(state = initialState, action) {
   switch (action.type) {
-    case signup.GET_DATA_FORM:
+    case signup.SET_FORM_DATA:
       return { ...state, ...action.payload };
     default:
       return state;

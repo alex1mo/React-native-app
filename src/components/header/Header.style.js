@@ -25,5 +25,10 @@ export const styles = StyleSheet.create({
   add: {
     fontSize: rem * 2,
     color: "white"
+  },
+
+  add2: {
+    fontSize: rem,
+    color: "white"
   }
 });

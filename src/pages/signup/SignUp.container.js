@@ -11,5 +11,5 @@ const mapStateToProps = ({ dataForm }) => {
 
 export default connect(
   mapStateToProps,
-  { getFormData: signup.getFormData }
+  { setFormData: signup.setFormData }
 )(SignUp);

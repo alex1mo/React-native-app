@@ -1,5 +1,5 @@
-const GET_DATA_FORM = "GET_DATA_FORM";
+const SET_FORM_DATA = "SET_FORM_DATA";
 
 export default {
-  GET_DATA_FORM
+  SET_FORM_DATA
 };

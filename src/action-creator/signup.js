@@ -1,12 +1,12 @@
 import signup from "../action-type/signup";
 
-const getFormData = data => {
+const setFormData = data => {
   return {
-    type: signup.GET_DATA_FORM,
+    type: signup.SET_FORM_DATA,
     payload: data
   };
 };
 
 export default {
-  getFormData
+  setFormData
 };

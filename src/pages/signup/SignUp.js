@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { styles } from "./SignUp.style";
 
-const SignUp = ({ getFormData }) => {
+const SignUp = ({ setFormData }) => {
   let form = {
     phone: null,
     password1: null,
@@ -39,7 +39,7 @@ const SignUp = ({ getFormData }) => {
         onPress={() => {
           let { phone, password1, password2 } = form;
           if (password1 === password2 && phone) {
-            getFormData({ phone, password: password1 });
+            setFormData({ phone, password: password1 });
           }
         }}
       >
@@ -50,7 +50,7 @@ const SignUp = ({ getFormData }) => {
 };
 
 SignUp.propTypes = {
-  getFormData: PropTypes.func.isRequired
+  setFormData: PropTypes.func.isRequired
 };
 
 export default SignUp;
