@@ -7,6 +7,14 @@ const addItem = data => {
   };
 };
 
+const fetchList = list => {
+  return {
+    type: add.FETCH_LIST,
+    payload: list
+  };
+};
+
 export default {
+  fetchList,
   addItem
 };

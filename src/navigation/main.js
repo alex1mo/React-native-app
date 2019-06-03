@@ -1,12 +1,7 @@
-import { Easing, Animated } from "react-native";
 import { createAppContainer, createStackNavigator } from "react-navigation";
 
 import SignUp from "../pages/signup/SignUp.container";
 import Main from "../pages/main/Main.container";
-
-import utils from "../utils/utils.all";
-
-let auth = utils.retrieveData("auth");
 
 const MainStack = createStackNavigator(
   {
@@ -24,7 +19,7 @@ const MainStack = createStackNavigator(
     }
   },
   {
-    initialRouteName: (auth && "main") || "signup",
+    initialRouteName: "signup",
     defaultNavigationOptions: {
       headerStyle: {
         display: "none"
@@ -34,3 +29,5 @@ const MainStack = createStackNavigator(
 );
 
 export default createAppContainer(MainStack);
+
+// initialRouteName: (auth && "main") || "signup",

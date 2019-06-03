@@ -1,12 +1,18 @@
 import add from "../action-type/add";
+import utils from "../utils/utils.all";
 
-let id = 0;
 const initialState = [];
 
 export default function addReduser(state = initialState, action) {
   switch (action.type) {
     case add.ADD_ITEM:
-      return [...state, { ...action.payload, id: id++ }];
+      utils.storeData(
+        "list",
+        JSON.stringify([...state, { ...action.payload }])
+      );
+      return [...state, { ...action.payload }];
+    case add.FETCH_LIST:
+      return [...action.payload];
     default:
       return state;
   }

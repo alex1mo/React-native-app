@@ -13,11 +13,10 @@ const retrieveData = async key => {
   try {
     const value = await AsyncStorage.getItem(key);
     if (value !== null) {
-      return true;
+      return value;
     }
   } catch (error) {
     console.warm(error);
-    return false;
   }
 };
 

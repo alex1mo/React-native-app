@@ -3,8 +3,6 @@ import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
 
-import SignUp from "./src/pages/signup/SignUp.container";
-import Main from "./src/pages/main/Main.container";
 import MainStack from "./src/navigation/main";
 
 import rootReducer from "./src/reducer";
