@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import Header from "../../components/header/Header.container";
 import Add from "../../components/add/Add";
-import Profile from "../../components/profile/Profile";
+import Profile from "../../components/profile/Profile.container";
 
 import { styles } from "./Main.style";
 
@@ -18,7 +18,8 @@ const Main = ({ page: Page }) => {
           alignItems: "center"
         }}
       >
-        {Page && <Page />}
+        {/* {Page && <Page />} */}
+        <Profile />
       </View>
     </View>
   );

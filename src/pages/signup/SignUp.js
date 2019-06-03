@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { styles } from "./SignUp.style";
 
-const SignUp = ({ getFormData, dataForm }) => {
+const SignUp = ({ getFormData }) => {
   let form = {
     phone: null,
     password1: null,
@@ -50,10 +50,6 @@ const SignUp = ({ getFormData, dataForm }) => {
 };
 
 SignUp.propTypes = {
-  form: PropTypes.shape({
-    phone: PropTypes.string,
-    password: PropTypes.string
-  }),
   getFormData: PropTypes.func.isRequired
 };
 

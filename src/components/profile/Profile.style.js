@@ -35,8 +35,18 @@ export const styles = StyleSheet.create({
     marginVertical: rem * 0.3
   },
 
+  textInput: {
+    borderBottomWidth: 1,
+    width: width * 0.5
+  },
+
+  wrapButtom: {
+    ...flexCenter,
+    flexDirection: "row"
+  },
+
   edit: {
-    marginTop: rem,
+    margin: rem,
     ...AddStyle.button
   },
 

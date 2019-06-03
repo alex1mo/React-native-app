@@ -3,7 +3,7 @@ import { View, Image, Text, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
 import Add from "../add/Add";
-import Profile from "../profile/Profile";
+import Profile from "../profile/Profile.container";
 
 import { styles } from "./Header.style";
 

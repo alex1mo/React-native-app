@@ -1,76 +1,94 @@
 import React from "react";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, Image, TouchableOpacity, Alert } from "react-native";
+
+import PropTypes from "prop-types";
 
 import { styles } from "./Profile.style";
+import utils from "./Profile.utils";
 
-const renderTitleToData = () => {
-  let title = ["name", "age", "email", "phone"];
-
-  return title.map(e => {
-    return (
-      <Text key={e} style={styles.text}>
-        {e + ":"}
-      </Text>
-    );
-  });
-};
-
-const renderDataProfile = ({ name, age, phone, email }) => {
-  let title = ["name", "age", "email", "phone"];
-
-  return title.map(e => {
-    let result = null;
-    switch (e) {
-      case "name":
-        result = name;
-        break;
-      case "age":
-        result = age;
-        break;
-      case "phone":
-        result = phone;
-        break;
-      case "email":
-        result = email;
-        break;
-      default:
-        result = "";
+class Profile extends React.Component {
+  state = {
+    edit: false,
+    data: {
+      name: "name",
+      age: "age",
+      phone: "phone",
+      email: "email",
+      image: null
     }
-    return (
-      <Text key={e} style={styles.text}>
-        {result}
-      </Text>
-    );
-  });
-};
+  };
 
-const Profile = () => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={{ borderBottomWidth: 1, borderBottomColor: "#00b3be" }}
-      >
-        <Image
-          style={styles.avatar}
-          source={require("../../../assets/defaultAvatar.jpeg")}
-        />
-      </TouchableOpacity>
-      <View style={styles.data}>
-        <View style={{ marginRight: 10 }}>{renderTitleToData()}</View>
-        <View>
-          {renderDataProfile({
-            name: "name",
-            age: "age",
-            phone: "phone",
-            email: "email"
-          })}
+  render() {
+    let { edit, data } = this.state;
+    let { profileData, getFormData } = this.props;
+
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={{ borderBottomWidth: 1, borderBottomColor: "#00b3be" }}
+          disabled={!edit}
+          onPress={() =>
+            Alert.alert("Hello, User", "Choose your destiny", [
+              { text: "Camera", onPress: () => utils.takeFromCamera() },
+              {
+                text: "Gallery",
+                onPress: () => utils.takeFromGallery(this)
+              }
+            ])
+          }
+        >
+          <Image
+            style={styles.avatar}
+            source={{
+              uri: profileData.image || "../../../assets/defaultAvatarMin.png"
+            }}
+          />
+        </TouchableOpacity>
+        <View style={styles.data}>
+          <View style={{ marginRight: 10 }}>{utils.renderTitleToData()}</View>
+          {(edit && <View>{utils.renderSetDataProfile(this)}</View>) || (
+            <View>{utils.renderDataProfile(profileData)}</View>
+          )}
+        </View>
+        <View style={styles.wrapButtom}>
+          <TouchableOpacity
+            style={styles.edit}
+            onPress={() => {
+              this.setState({ edit: !edit });
+              if (edit) {
+                getFormData({ ...data, image: profileData.image });
+              }
+            }}
+          >
+            <Text style={styles.editText}>{(edit && "confirm") || "edit"}</Text>
+          </TouchableOpacity>
+          {edit && (
+            <TouchableOpacity
+              style={styles.edit}
+              onPress={() => {
+                this.setState({ edit: !edit, data: { ...profileData } });
+                getFormData({ ...profileData, image: data.image });
+              }}
+            >
+              <Text style={styles.editText}>reset</Text>
+            </TouchableOpacity>
+          )}
         </View>
       </View>
-      <TouchableOpacity style={styles.edit}>
-        <Text style={styles.editText}>edit</Text>
-      </TouchableOpacity>
-    </View>
-  );
+    );
+  }
+}
+
+require;
+
+Profile.propTypes = {
+  profileData: PropTypes.shape({
+    name: PropTypes.string,
+    age: PropTypes.string,
+    phone: PropTypes.string,
+    email: PropTypes.string
+  }),
+  getFormData: PropTypes.func.isRequired
 };
 
 export default Profile;
