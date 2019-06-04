@@ -26,7 +26,9 @@ utils
   .then(res => res && store.dispatch(profile.getUserData(res)));
 utils.retrieveData("auth").then(res => {
   if (res) {
-    return store.dispatch(signup.auth(res));
+    store.dispatch(signup.auth(res));
+  } else {
+    store.dispatch(signup.auth(`{"loading":false}`));
   }
 });
 

@@ -29,7 +29,12 @@ class Header extends React.Component {
   };
 
   render() {
-    let { page, setPage } = this.props;
+    let {
+      page,
+      setPage,
+      profileData: { image }
+    } = this.props;
+    console.log(image);
 
     return (
       <View style={styles.header}>
@@ -39,7 +44,10 @@ class Header extends React.Component {
         >
           <Image
             style={styles.avatar}
-            source={require("../../../assets/defaultAvatarMin.png")}
+            source={
+              (image && { uri: image }) ||
+              require("../../../assets/defaultAvatarMin.png")
+            }
           />
         </TouchableOpacity>
         {this.switchAdd(page) || (
@@ -54,6 +62,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   page: PropTypes.func,
+  profileData: PropTypes.object,
   setPage: PropTypes.func.isRequired
 };
 

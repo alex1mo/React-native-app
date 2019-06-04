@@ -21,7 +21,7 @@ const SignUp = ({ setFormData, navigation, dataForm }) => {
         <Text style={{ color: "white" }}>Loading...</Text>
       </View>
     );
-  } else if (dataForm.password.length > 0) {
+  } else if (dataForm.password && dataForm.password.length > 0) {
     return <Main />;
   }
 

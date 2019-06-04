@@ -22,6 +22,7 @@ class Profile extends React.Component {
   render() {
     let { edit, data } = this.state;
     let { profileData, setFormData } = this.props;
+    let { image } = profileData;
 
     return (
       <View style={styles.container}>
@@ -40,9 +41,12 @@ class Profile extends React.Component {
         >
           <Image
             style={styles.avatar}
-            source={{
-              uri: profileData.image || "../../../assets/defaultAvatarMin.png"
-            }}
+            source={
+              (image && {
+                uri: image
+              }) ||
+              require("../../../assets/defaultAvatar.jpeg")
+            }
           />
         </TouchableOpacity>
         <View style={styles.data}>

@@ -19,7 +19,8 @@ export const styles = StyleSheet.create({
 
   avatar: {
     width: rem * 3,
-    height: rem * 3
+    height: rem * 3,
+    borderRadius: 50
   },
 
   add: {

@@ -5,8 +5,9 @@ import Header from "./Header";
 
 import header from "../../action-creator/header.js";
 
-const mapStateToProps = ({ page }) => ({
-  page
+const mapStateToProps = ({ page, profileData }) => ({
+  page,
+  profileData
 });
 
 export default connect(
