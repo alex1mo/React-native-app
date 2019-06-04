@@ -6,11 +6,7 @@ import { styles } from "./List.style";
 
 const List = ({ list }) => {
   let status = list.length > 0;
-  return (
-    <View style={!status && styles.loading}>
-      {(status && utils.renderItem(list)) || <Text>Loading...</Text>}
-    </View>
-  );
+  return <View>{status && utils.renderItem(list)}</View>;
 };
 
 export default List;

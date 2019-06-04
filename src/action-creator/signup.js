@@ -7,6 +7,21 @@ const setFormData = data => {
   };
 };
 
+const auth = data => {
+  return {
+    type: signup.AUTH,
+    payload: data
+  };
+};
+
+const loading = () => {
+  return {
+    type: signup.LOADING
+  };
+};
+
 export default {
-  setFormData
+  setFormData,
+  auth,
+  loading
 };

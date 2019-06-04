@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 
 import { styles } from "./Profile.style";
 import utils from "./Profile.utils";
+import utilsAll from "../../utils/utils.all";
 
 class Profile extends React.Component {
   state = {
@@ -57,6 +58,10 @@ class Profile extends React.Component {
               this.setState({ edit: !edit });
               if (edit) {
                 setFormData({ ...data, image: profileData.image });
+                utilsAll.storeData(
+                  "profile",
+                  JSON.stringify({ ...data, image: profileData.image })
+                );
               }
             }}
           >

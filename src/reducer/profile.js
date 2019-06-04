@@ -9,9 +9,12 @@ const initialState = {
 };
 
 export default function profileReduser(state = initialState, action) {
+  console.log(action);
   switch (action.type) {
     case profile.SET_FORM_DATA:
       return { ...state, ...action.payload };
+    case profile.GET_USER_DATA:
+      return { ...state, ...JSON.parse(action.payload) };
     default:
       return state;
   }

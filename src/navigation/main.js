@@ -20,7 +20,7 @@ const MainStack = createStackNavigator(
     }
   },
   {
-    initialRouteName: "main",
+    initialRouteName: "signup",
     defaultNavigationOptions: {
       headerStyle: {
         display: "none"

@@ -1,5 +1,9 @@
-const SET_FORM_DATA = "SET_FORM_DATA";
+const SET_FORM_DATA = "@@signup/SET_FORM_DATA";
+const AUTH = "@@signup/AUTH";
+const LOADING = "@@signup/LOADING";
 
 export default {
-  SET_FORM_DATA
+  AUTH,
+  SET_FORM_DATA,
+  LOADING
 };

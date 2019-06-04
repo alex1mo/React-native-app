@@ -1,18 +1,29 @@
 import React from "react";
 import { View, TextInput, Text, TouchableOpacity } from "react-native";
-
 import PropTypes from "prop-types";
+
+import Main from "../main/Main.container";
 
 import { styles } from "./SignUp.style";
 
 import utils from "../../utils/utils.all";
 
-const SignUp = ({ setFormData, navigation }) => {
+const SignUp = ({ setFormData, navigation, dataForm }) => {
   let form = {
     phone: null,
     password1: null,
     password2: null
   };
+
+  if (dataForm.loading) {
+    return (
+      <View style={styles.container}>
+        <Text style={{ color: "white" }}>Loading...</Text>
+      </View>
+    );
+  } else if (dataForm.password.length > 0) {
+    return <Main />;
+  }
 
   return (
     <View style={styles.container}>
