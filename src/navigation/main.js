@@ -1,3 +1,4 @@
+import { Easing, Animated } from "react-native";
 import { createAppContainer, createStackNavigator } from "react-navigation";
 
 import SignUp from "../pages/signup/SignUp.container";
