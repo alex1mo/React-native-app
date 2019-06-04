@@ -15,10 +15,12 @@ const Item = ({ text, title }) => {
 };
 
 const renderItem = items => {
-  return items.map((e, i) => {
+  let arr = items.map((e, i) => {
     let { title, text } = e;
     return <Item key={i} title={title} text={text} />;
   });
+
+  return arr;
 };
 
 export default { renderItem };

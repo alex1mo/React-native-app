@@ -17,6 +17,12 @@ export const styles = StyleSheet.create({
     height: height * 0.1
   },
 
+  loading: {
+    width,
+    height: height * 0.8,
+    ...flexCenter
+  },
+
   title: {
     color: "white",
     fontSize: rem

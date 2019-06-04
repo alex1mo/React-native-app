@@ -7,6 +7,10 @@ import MainStack from "./src/navigation/main";
 
 import rootReducer from "./src/reducer";
 import rootSaga from "./src/sagas";
+import utils from "./src/utils/utils.all";
+import add from "./src/action-creator/add";
+
+utils.retrieveData("list").then(res => store.dispatch(add.fetchList(res)));
 
 const sagaMiddleware = createSagaMiddleware();
 

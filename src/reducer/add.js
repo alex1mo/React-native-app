@@ -1,7 +1,6 @@
 import add from "../action-type/add";
-import utils from "../utils/utils.all";
 
-const initialState = [];
+let initialState = [];
 
 export default function addReduser(state = initialState, action) {
   switch (action.type) {
@@ -12,7 +11,7 @@ export default function addReduser(state = initialState, action) {
       );
       return [...state, { ...action.payload }];
     case add.FETCH_LIST:
-      return [...action.payload];
+      return JSON.parse(action.payload);
     default:
       return state;
   }
